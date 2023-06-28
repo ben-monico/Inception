@@ -1,0 +1,9 @@
+Docker containers:
+	- nginx TLSv1.2 or v1.3
+	- wordpress + php-fpm (installed and config) without nginx
+	- mariadb without nginx
+Volues:
+	- wordpress database (must  be 2 users, 1 is admin and its name cant contain 'admin')
+	- wordpress webstie files
+Docker network establishing connection between containers
+
