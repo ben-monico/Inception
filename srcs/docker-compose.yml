@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  nginx:
+    build: ./requirements/nginx/
+    ports:
+      - "443:443"
+    # volumes:
+    # - wordpress volume
+    restart: always
+    # environment:
+    # - USERNAME=$USERNAME
+    # - MARIADB_USER=${MARIADBUSER}
+    # depends_on:
+    #  - [wordpress]
+
+  # mariadb:
+  # wordpress:
+# volumes:
+  # - /var/lib/mysql
+  # - volname:/var/lib/mysql
+# networks:
+  # - bridge
+
+
