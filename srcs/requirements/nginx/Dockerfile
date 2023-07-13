@@ -1,12 +1,12 @@
-FROM    debian:11
+FROM debian:11
 
-RUN		apt-get update && apt-get install -y nginx
+RUN apt-get update && apt-get install -y nginx
 
-COPY    ./conf/nginx.conf /etc/nginx/conf.d 
-COPY    ./tools /etc/nginx/ssl
+COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./tools /etc/nginx/certificates
 
-RUN     mkdir -p /run/nginx
+RUN mkdir -p /run/nginx
 
-EXPOSE	443
+EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]

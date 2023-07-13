@@ -21,7 +21,7 @@ fclean:
 	docker volume prune --force
 
 reset:
-	docker ps -a -q | xargs -n1 -I % docker rm %
-	docker images -q | xargs -n1 -I % docker rmi %
+	docker ps -a -q | xargs -r -n1 -I % docker rm %
+	docker images -q | xargs -r -n1 -I % docker rmi %
 
 .PHONY	: all build down re clean fclean reset
