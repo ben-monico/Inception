@@ -1,5 +1,12 @@
-FROM debian
-RUN  apt-get -y update && apt-get -y install nginx
-COPY /conf/my.conf /etc/nginx/conf.d
-EXPOSE 443/tcp
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+FROM    debian:11
+
+RUN		apt-get update && apt-get install -y nginx
+
+COPY    ./conf/nginx.conf /etc/nginx/conf.d 
+COPY    ./tools /etc/nginx/ssl
+
+RUN     mkdir -p /run/nginx
+
+EXPOSE	443
+
+CMD ["nginx", "-g", "daemon off;"]
